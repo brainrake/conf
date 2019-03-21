@@ -1,0 +1,140 @@
+"*":
+  Zen:
+    fullscreen: false
+    gutter: true
+    softWrap: true
+    width: 120
+  "agda-mode":
+    internalState: "{\"connections\":[],\"erred\":[]}"
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
+  "atom-pair": {}
+  "atom-typescript": {}
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    includeCompletionsFromAllBuffers: false
+  autosave:
+    enabled: true
+  "bracket-matcher":
+    autocompleteBrackets: false
+    highlightMatchingLineNumber: true
+  "command-palette":
+    preserveLastSearch: true
+  core:
+    autoHideMenuBar: true
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "metrics"
+      "linter-pylint"
+      "spell-check"
+      "ide-purescript"
+      "hasklig"
+      "elm-navigator"
+      "elastic-tabstops"
+      "elmjutsu"
+      "linter"
+      "linter-mypy"
+      "firacode"
+      "haskell-debug"
+      "linter-elm-make"
+      "coolsor"
+    ]
+    projectHome: "/home/ssdd/dev"
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "snow-dark-syntax"
+    ]
+  "document-outline": {}
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Fira Sans"
+    fontSize: 16
+    invisibles: {}
+    lineHeight: 1.2
+    scrollPastEnd: true
+    tabLength: 4
+    zoomFontWhenCtrlScrolling: false
+  "elm-format": {}
+  elmjutsu:
+    autocompleteEnabled: true
+    autocompleteSnippetsEnabled: true
+    cacheDirectory: "/tmp/elmjutsu11101KCL5RLxq3al9"
+    hyperclickEnabled: true
+  "exception-reporting":
+    userId: "59362366-325f-a88f-954d-6375e359219a"
+  firacode:
+    enabledScopes: [
+      "source.haskell"
+      "source.purescript"
+      "source.elm"
+      "source.idris"
+    ]
+    firacodeWeight: "regular"
+    fontWeight: "regular"
+  fonts:
+    fontFamily: "Bitstream Vera Sans Mono"
+  hidpi:
+    scaleFactor: 1.5
+  "highlight-selected":
+    hideHighlightOnSelectedWord: true
+  "ide-haskell": {}
+  "ide-purescript": {}
+  "language-elm":
+    autocompleteEnabled: false
+  "language-idris":
+    panelFontFamily: "Fira Code"
+    panelFontLigatures: true
+    panelFontSize: 20
+  linter:
+    disabledProviders: [
+      "linter-mypy"
+    ]
+  "linter-elm-make": {}
+  "linter-mypy":
+    executablePath: "/home/ssdd/dev/$PROJECT_NAME/.venv/bin/python"
+  "linter-ui-default":
+    panelHeight: 99.33333587646484
+  minimap:
+    absoluteMode: true
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+      selection: true
+      selectionDecorationsZIndex: 0
+  "outline-selection":
+    outlineOpacity: 0.5
+    outlineRadius: 4
+  pigments: {}
+  "python-tools": {}
+  "spell-check": {}
+  "status-bar": {}
+  susave:
+    tryDefaultSave: false
+  tabs:
+    alwaysShowTabBar: false
+    enableVcsColoring: true
+  "tree-view":
+    squashDirectoryNames: true
+  welcome:
+    showOnStartup: false
+".idris.source":
+  editor:
+    showIndentGuide: true
+".nix.source":
+  editor:
+    tabLength: 2
+".source.ts":
+  editor:
+    tabLength: 4
+".source.yaml":
+  editor:
+    tabLength: 2

@@ -1,0 +1,24 @@
+[user]
+  email = martonboros@gmail.com
+  name = Márton Boros
+[alias]
+  lol = log --oneline --graph --decorate
+  s = status -sb
+  ps = push
+  pl = pull
+  a = add
+  c = commit -m
+  m = merge
+  d = diff --color-words
+  ca = commit --amend --no-edit
+[push]
+	default = current
+[merge]
+	defaultToUpstream = on
+	ff = false
+[branch]
+	autosetuprebase = always
+[filter "xz"]
+  clean = xz
+  smudge = unxz
+  required

@@ -1,0 +1,130 @@
+{
+	"always_prompt_for_file_reload": false,
+	"always_show_minimap_viewport": true,
+	"animation_enabled": true,
+	"auto_close_tags": true,
+	"auto_complete": true,
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_delay": 50,
+	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
+	"auto_complete_size_limit": 4194304,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html"
+		}
+	],
+	"auto_complete_with_fields": false,
+	"auto_indent": true,
+	"auto_match_enabled": true,
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"bold_folder_labels": false,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 1,
+	"caret_style": "smooth",
+	"color_scheme": "Packages/User/SublimeLinter/Blackboard (SL).tmTheme",
+	"draw_indent_guides": false,
+	"draw_minimap_border": true,
+	"enable_tab_scrolling": true,
+	"enable_telemetry": "false",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		"result",
+		".terraform/modules",
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"elm-stuff",
+		"node_modules",
+		"bower_components"
+	],
+	"font_face": "Fira Sans Light",
+	"font_options":
+	[
+		"//no_antialias"
+	],
+	"font_size": 23,
+	"gutter": true,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Package Control",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"indent_to_bracket": true,
+	"index_exclude_patterns":
+	[
+		"*.log"
+	],
+	"index_files": true,
+	"line_numbers": true,
+	"margin": 1,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		79
+	],
+	"save_on_focus_lost": true,
+	"scroll_speed": 1.0,
+	"shift_tab_unindent": true,
+	"show_full_path": false,
+	"show_tab_close_buttons": true,
+	"smart_indent": false,
+	"tab_completion": true,
+	"tab_size": 2,
+	"theme": "Sodarized Dark 3.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false,
+	"word_wrap": "auto"
+}

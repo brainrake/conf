@@ -1,0 +1,5 @@
+{
+  imports = [ ./physical/eki.nix ];
+
+  nixpkgs.config.allowUnfree = true;
+}

@@ -1,0 +1,52 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"Package Control"
+	],
+	"installed_packages":
+	[
+		"Base16 Color Schemes",
+		"Better CoffeeScript",
+		"BracketHighlighter",
+		"Dockerfile Syntax Highlighting",
+		"EJS",
+		"Elm Language Support",
+		"EvalPrinter",
+		"Evaluate",
+		"F#",
+		"GitGutter",
+		"GitHubinator",
+		"GitSavvy",
+		"Glue",
+		"Go To Definition",
+		"Handlebars",
+		"Highlight Build Errors",
+		"INI",
+		"Jade",
+		"JSON Reindent",
+		"Jump Along Indent",
+		"LESS",
+		"Markdown Extended",
+		"Markdown Preview",
+		"Nix",
+		"Package Control",
+		"PackageResourceViewer",
+		"Parinfer",
+		"PowerShell",
+		"PureScript",
+		"Racket",
+		"SML (Standard ML)",
+		"Solarized Color Scheme",
+		"SublimeLinter",
+		"SublimeLinter-contrib-elm-make",
+		"SublimeLinter-jshint",
+		"Terminal",
+		"Terraform",
+		"Theme - Sodarized",
+		"Theme - Solarized Space",
+		"TypeScript",
+		"UnicodeMath",
+		"Worksheet"
+	]
+}

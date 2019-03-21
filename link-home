@@ -1,0 +1,4 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p stow
+set -e; set -x
+stow ssdd --dir=./home --target=/home/ssdd --no-folding
