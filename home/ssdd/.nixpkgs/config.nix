@@ -1,8 +1,6 @@
 {
   allowUnfree = true;
 
-  chromium.enablePepperFlash = true;
-
   packageOverrides = pkgs: rec {
     my_ = pkgs.buildEnv {
       name = "my_";
@@ -14,7 +12,6 @@
         gnome3.seahorse
         firefox
         git gcc racket direnv meld file graphviz imagemagick
-        sublime3 atom
         mixxx
         gimp
         urbit
@@ -24,7 +21,7 @@
       name = "my_desktop";
       paths = [ my_tools ] ++ (with pkgs; [
         i3 i3status i3lock dmenu networkmanager_dmenu
-        pasystray volumeicon networkanagerapplet
+        pasystray volumeicon
         mpv evince geeqie feh pcmanfm
         chromium
         xorg.xbacklight xorg.xev xorg.xkbcomp xorg.xmodmap hsetroot glxinfo xorg.xev compton
