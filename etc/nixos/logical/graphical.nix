@@ -27,6 +27,8 @@
   # programs.sway.enable = true;
   # programs.adb.enable = true;
 
+  programs.slock.enable = true;
+
   nix = {
     distributedBuilds = true;
     maxJobs = 4;

@@ -5,7 +5,8 @@ exec "xrdb .Xresources"
 exec "xkbcomp .xkb $DISPLAY"
 exec "xset r rate 200 30"
 exec "pasystray"
-exec "~/.nix-profile/lib/libexec/kdeconnectd"
+exec "/home/ssdd/.nix-profile/lib/libexec/kdeconnectd"
+#exec "gnome-keyring-daemon --start --components=secrets"
 #exec "compton --backend=glx --vsync=opengl-swc"
 #exec "xsetroot -solid rgb:00/2b/36"
 #exec "hsetroot -solid "#002b36"
@@ -31,10 +32,10 @@ bindsym $mod+Shift+u exec xrandr --output eDP1 --primary --mode 3200x1800 --pos 
 # bindsym $mod+Shift+o exec xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --output eDP1 --mode 1920x1080 --pos 0x1080
 # bindsym $mod+Shift+p exec xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --output eDP1 --off --pos 0x1080
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 15
-bindsym XF86MonBrightnessDown exec xbacklight -dec 15
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-bindsym XF86Sleep exec /home/ssdd/.bin/lock
+bindsym XF86Sleep exec slock
 
 set $mod Mod4
 #set $mod Mod1
