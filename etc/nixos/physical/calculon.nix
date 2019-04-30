@@ -1,13 +1,23 @@
 { config, pkgs, lib, ... }:
 {
-  imports = [ ./common.nix ];
+  imports = [ ../logical/desktop.nix ];
 
   boot.loader.grub = {
     enable = true;
     version = 2;
-    device = "/dev/sdb";
+    device = "/dev/disk/by-id/wwn-0x57c3548161b1f760";
+    gfxmodeBios = "960x720";
   };
 
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "uas" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [ "pci=noaer" ];
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/93bf7aef-d09d-4662-890f-8f7e99d2828d";
+    fsType = "ext4";
+  };
+ 
   networking = {
     defaultGateway = { address = "192.168.100.1"; interface = "enp1s0"; };
     hostName = "calculon";
@@ -53,6 +63,12 @@
       locations."/".root = pkgs.writeTextDir "index.html" ''
         blarf
       '';
+      locations."/www" = {
+        root = "/www";
+        extraConfig = ''
+          rewrite ^/www/(.*)$ /$1 break;
+        '';
+      };
     };
   };
 }
