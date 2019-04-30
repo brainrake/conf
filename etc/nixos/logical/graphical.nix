@@ -1,4 +1,4 @@
-{congig, lib, pkgs, ...}:
+{config, lib, pkgs, ...}:
 
 {
   imports = [ ./common.nix ];
@@ -23,9 +23,6 @@
   };
 
   networking.networkmanager.enable = true;
-
-  # programs.sway.enable = true;
-  # programs.adb.enable = true;
 
   programs.slock.enable = true;
 
