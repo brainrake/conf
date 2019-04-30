@@ -34,10 +34,10 @@
     my_tools = pkgs.buildEnv {
       name = "my_tools";
       paths = with pkgs; [
-        iputils bind nmap mtr wget gnupg mkpasswd
-        htop psmisc unzip bc mc mc-solarized
+        mosh iputils bind nmap tcpdump mtr wget iw wirelesstools gnupg mkpasswd
+        htop psmisc nox bc
         pciutils lm_sensors
-        nox
+        bat tree unzip mc mc-solarized
       ];
     };
     mc-solarized = pkgs.writeTextFile {
@@ -48,12 +48,5 @@
         sha256 = "13p2flyn0i1c88xkycy2rk24d51can8ff31gh3c6djni3p981waq";
       };
     };
-
-    /* bitwig-studio2 = pkgs.bitwig-studio2.overrideAttrs (old : {
-      postUnpack = ''
-        rm root/opt/bitwig-studio/bin/bitwig.jar
-        cp ${./bitwig.nix} root/opt/bitwig-studio/bin/bitwig.jar
-      '';
-    }); */
   };
 }
