@@ -42,6 +42,21 @@
     shell = pkgs.zsh;
   };
 
+  users.users.guest = {
+    isNormalUser = true;
+    uid = 1111;
+    extraGroups = [ "networkmanager" "audio" ];
+    password = "guest";
+  };
+
+  environment.systemPackages = with pkgs; [
+    git direnv file toilet gparted rfkill powertop
+    iputils iw wirelesstools bind nmap
+  ];
+
+  programs.mtr.enable = true;
+  programs.tmux.enable = true;
+
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "18.09";
 }
