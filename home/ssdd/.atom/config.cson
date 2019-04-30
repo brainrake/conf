@@ -53,6 +53,7 @@
     invisibles: {}
     lineHeight: 1.2
     scrollPastEnd: true
+    showIndentGuide: true
     tabLength: 4
     zoomFontWhenCtrlScrolling: false
   "elm-format": {}
@@ -129,6 +130,10 @@
 ".idris.source":
   editor:
     showIndentGuide: true
+".js.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
 ".nix.source":
   editor:
     tabLength: 2
