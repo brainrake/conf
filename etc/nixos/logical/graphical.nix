@@ -3,8 +3,6 @@
 {
   imports = [ ./common.nix ];
 
-  boot.plymouth.enable = true;
-
   hardware = {
     opengl = rec {
       driSupport32Bit = true;
@@ -26,8 +24,8 @@
 
   networking.networkmanager.enable = true;
 
-  programs.sway.enable = true;
-  programs.adb.enable = true;
+  # programs.sway.enable = true;
+  # programs.adb.enable = true;
 
   nix = {
     distributedBuilds = true;
@@ -50,35 +48,17 @@
   };
 
   environment.systemPackages = with pkgs; [
-    toilet
-    gparted rfkill powertop
-    rxvt_unicode
+    rxvt_unicode arandr
+    mpv evince transmission_gtk firefox
   ];
-
-  services.keybase.enable = true;
-
-  services.kbfs.enable = true;
 
   services.xserver = {
     enable = true;
     layout = "us";
-    windowManager.i3.enable = true;
-    displayManager.slim = {
-      enable = true;
-      theme = pkgs.fetchurl {
-        url = "https://github.com/edwtjo/nixos-black-theme/archive/v1.0.tar.gz";
-        sha256 = "13bm7k3p6k7yq47nba08bn48cfv536k4ipnwwp1q1l2ydlp85r9d";
-      };
-      defaultUser = "ssdd";
-      extraConfig = ''
-        welcome_msg
-        session_msg
-        intro_msg
-        username_msg
-        password_msg
-      '';
-    };
     enableCtrlAltBackspace = true;
+
+    windowManager.i3.enable = true;
+
     synaptics = {
       enable = true;
       twoFingerScroll = true;
