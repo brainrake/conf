@@ -42,13 +42,6 @@
     shell = pkgs.zsh;
   };
 
-  users.users.guest = {
-    isNormalUser = true;
-    uid = 1111;
-    extraGroups = [ "networkmanager" "audio" ];
-    password = "guest";
-  };
-
   environment.systemPackages = with pkgs; [
     git direnv file toilet gparted rfkill powertop
     iputils iw wirelesstools bind nmap
