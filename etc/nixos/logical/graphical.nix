@@ -25,6 +25,7 @@
   networking.networkmanager.enable = true;
 
   programs.slock.enable = true;
+  programs.light.enable = true;
 
   nix = {
     distributedBuilds = true;
