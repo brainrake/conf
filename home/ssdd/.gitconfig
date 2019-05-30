@@ -1,6 +1,7 @@
 [user]
   email = martonboros@gmail.com
   name = Márton Boros
+  signingkey = C24B0C37084F648F8812AE71C0D4B398D4F3158F
 [alias]
   lol = log --oneline --graph --decorate
   s = status -sb
@@ -22,3 +23,5 @@
   clean = xz
   smudge = unxz
   required
+[commit]
+	gpgsign = true
