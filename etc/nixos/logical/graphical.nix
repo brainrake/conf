@@ -48,8 +48,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    i3 i3status dmenu networkmanager_dmenu pasystray volumeicon
     rxvt_unicode arandr
-    mpv evince transmission_gtk firefox
+    mpv evince transmission_gtk firefox pcmanfm
   ];
 
   services.xserver = {

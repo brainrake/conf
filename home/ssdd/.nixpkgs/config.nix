@@ -20,8 +20,6 @@
     my_desktop = pkgs.buildEnv {
       name = "my_desktop";
       paths = [ my_tools ] ++ (with pkgs; [
-        i3 i3status i3lock dmenu networkmanager_dmenu
-        pasystray volumeicon
         mpv evince geeqie feh pcmanfm
         chromium
         xorg.xbacklight xorg.xev xorg.xkbcomp xorg.xmodmap hsetroot glxinfo xorg.xev compton
