@@ -70,7 +70,9 @@ alias comp='compton --backend=glx --vsync=opengl-swc'
 
 alias y='noglob youtube-dl --extract-audio --audio-format flac '
 
-[[ -x `command -v keychain` ]] && eval $(keychain --eval -Q --quiet id_ecdsa id_rsa)
+eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+#[[ -x `command -v keychain` ]] && eval $(keychain --eval -Q --quiet id_ecdsa id_rsa)
 #envoy -t gpg-agent
 #source <(envoy -p -t gpg-agent)
 
