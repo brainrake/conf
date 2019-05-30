@@ -28,6 +28,8 @@
 
   powerManagement.cpuFreqGovernor = "powersave";
 
-  # zramSwap.enable = true;
-  # zramSwap.memoryPercent = 25;
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+  };
 }
