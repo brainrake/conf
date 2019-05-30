@@ -14,8 +14,6 @@
 
   powerManagement.enable = true;
 
-  programs.zsh.enable = true;
-
   services.avahi = {
     enable = true;
     nssmdns = true;
@@ -47,6 +45,7 @@
     iputils iw wirelesstools bind nmap
   ];
 
+  programs.zsh.enable = true;
   programs.mtr.enable = true;
   programs.tmux.enable = true;
 
