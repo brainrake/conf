@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ <nixpkgs/nixos/modules/hardware/network/broadcom-43xx.nix>
-      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-      ../logical/graphical.nix
-    ];
+  imports = [ ../logical/workstation.nix ];
 
   networking.hostName = "eki";
 
