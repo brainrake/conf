@@ -18,6 +18,8 @@ exec "gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
 #exec start-pulseaudio-x11
 exec 'kbfsfuse /keybase'
 
+set $mod Mod4
+
 bindsym $mod+u exec "xkbcomp .xkb $DISPLAY; xset r rate 250 30"
 
 # start a terminal
@@ -37,10 +39,9 @@ bindsym XF86MonBrightnessDown exec light -U 5
 
 bindsym XF86Sleep exec slock
 
-set $mod Mod4
-#set $mod Mod1
+#new_window 1pixel
+default_border pixel 1
 
-new_window 1pixel
 
 font pango:Terminus 12
 
@@ -245,10 +246,10 @@ bar {
 
 
 # class                 border  bg      text    indicator
-client.focused          #000000 #93a1a1 #fdf6e3 #002b36
-client.focused_inactive #586e75 #586e75 #fdf6e3 #002b36
-client.unfocused        #586e75 #586e75 #93a1a1 #002b36
-client.urgent           #dc322f #dc322f #fdf6e3 #002b36
+client.focused          #000000 #93a1a1 #fdf6e3 #002b36 #93a1a1
+client.focused_inactive #586e75 #586e75 #fdf6e3 #002b36 #586e75
+client.unfocused        #586e75 #586e75 #93a1a1 #002b36 #586e75
+client.urgent           #dc322f #dc322f #fdf6e3 #002b36 #dc322f
 
 #$base03:    #002b36;
 #$base02:    #073642;
