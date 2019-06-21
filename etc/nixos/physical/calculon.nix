@@ -13,6 +13,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.kernelParams = [ "pci=noaer" ];
 
+  zramSwap.enable = true;
+
   users.users.nomadbase-backup = {
     isNormalUser = true;
     createHome = true;
