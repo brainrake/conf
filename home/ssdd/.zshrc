@@ -11,15 +11,11 @@ zstyle ':completion:*:processes-names' command 'ps -e -o comm='
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
 
-
 autoload -U promptinit
 promptinit
 prompt adam2 8bit `uname -ni | sha1sum | cut -c 3` 14 7
 [[ -v IN_NIX_SHELL ]] && prompt_nixshell="%B%F{$prompt_adam2_color3} nix-shell  "
 prompt_line_1a="$prompt_gfx_tbox$prompt_l_paren${prompt_nixshell}%B%F{$prompt_adam2_color2}%~$prompt_r_paren%b%F{$prompt_adam2_color1}"
-
-#prompt adam2 8bit `uname -ni | sha1sum | cut -c 3` black black black magenta
-#prompt_char="%(!.#.%B%F{black}>)"
 
 # key bindings
 bindkey -e
@@ -62,7 +58,6 @@ alias t='setsid urxvt -cd $PWD'
 alias n='nix-shell --show-trace --command zsh'
 alias nr='nix-shell --show-trace command zsh --run "$1"'
 
-nixf(){ nix-env -qaP \* -f '<nixpkgs>' | grep -i "$1"; }
 nixh(){ nix-env  -qaP -f '<nixpkgs>' -A haskellPackages | grep -i "$1"; }
 just(){ nix-shell -p "$1" --command "$(echo "$@")"; }
 
@@ -72,20 +67,9 @@ alias y='noglob youtube-dl --extract-audio --audio-format flac '
 
 eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
-#[[ -x `command -v keychain` ]] && eval $(keychain --eval -Q --quiet id_ecdsa id_rsa)
-#envoy -t gpg-agent
-#source <(envoy -p -t gpg-agent)
 
 [[ -x `command -v dircolors` ]] && [[ -e .dircolors ]] && eval `dircolors .dircolors`
 
 export MC_SKIN=$HOME/.config/mc/solarized.ini
 
 eval "$(direnv hook zsh)"
-
-PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
-PATH=$PATH:$HOME/.cabal/bin
-PATH=$PATH:$HOME/.npm_global/bin:node_modules/.bin
-PATH=$PATH:$HOME/.bin
-PATH=$PATH:$HOME/.local/bin
-
-export PATH=/home/ssdd/.local/bin:$PATH

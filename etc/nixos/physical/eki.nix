@@ -3,6 +3,8 @@
 {
   imports = [ ../logical/workstation.nix ];
 
+  hardware.enableRedistributableFirmware = true;
+
   networking.hostName = "eki";
 
   i18n.consoleFont = "ter-i32n";

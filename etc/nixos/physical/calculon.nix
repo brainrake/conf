@@ -43,7 +43,7 @@
       }
     '';
     machines = [
-      { ethernetAddress = "30:52:cb:e8:20:e7"; ipAddress = "192.168.100.20"; hostName = "eki"; } 
+      { ethernetAddress = "74:70:fd:d7:f5:c8"; ipAddress = "192.168.100.20"; hostName = "eki"; } 
       { ethernetAddress = "fc:aa:14:34:0f:79"; ipAddress = "192.168.100.30"; hostName = "lada"; } 
       { ethernetAddress = "18:fe:34:f5:dc:51"; ipAddress = "192.168.100.51"; hostName = "ix-k"; } 
       { ethernetAddress = "2c:3a:e8:00:a7:0f"; ipAddress = "192.168.100.52"; hostName = "ix-r"; } 
