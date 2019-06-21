@@ -22,8 +22,6 @@
     };
   };
 
-  boot.plymouth.enable = true;
-
   networking.networkmanager.enable = true;
 
   programs.slock.enable = true;
