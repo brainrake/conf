@@ -13,9 +13,21 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.kernelParams = [ "pci=noaer" ];
 
+  users.users.nomadbase-backup = {
+    isNormalUser = true;
+    createHome = true;
+    home = "/data/nomadbase-backup/";
+    openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpf/FmDi1MxCbaQ4jLSCG4xUP+D+ikquNFp9ajqDzNCxG4Wm5fQpbOc0xOKoGQX3yiInItDgIdxOCrVyFkMoNma2c+N3O+bNpgxUH26sYY2g9f6G95OpM4J7gwonrcYDnKxt/GPasSSPCNkmH5Q9b8RHmRaz1mk08Rg6xA/GdQCO77hD+RG8GcbArscQmgSrr9X2sdAJrhDJq5ysuNs799grgd4hvItXHgkxWfTZ+hNupgtAEeaP6qm0D1/5di22Plj4RL0J891U9WUWPIk0aJWPswc82fw8Gk8FuoEiHhEY3g7Lts8YnMYVuJmYgqOsagf7cZDlGoav1nRsaJ/xK3 root@nomadbase" ];
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/93bf7aef-d09d-4662-890f-8f7e99d2828d";
     fsType = "ext4";
+  };
+
+  fileSystems."/data/" = {
+    device = "/dev/disk/by-label/data";
+    options = [ "defaults" "nofail" ];
   };
  
   networking = {
