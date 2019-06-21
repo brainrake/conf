@@ -4,6 +4,7 @@
   imports = [ ../logical/workstation.nix ];
 
   hardware.enableRedistributableFirmware = true;
+  hardware.cpu.intel.updateMicrocode = true;
 
   networking.hostName = "eki";
 
