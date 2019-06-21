@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ../logical/workstation.nix ];
+  imports = [ ./lib/workstation.nix ];
 
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
@@ -34,4 +34,6 @@
     enable = true;
     memoryPercent = 25;
   };
+
+  virtualisation.lxc.enable = true;
 }

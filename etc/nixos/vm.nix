@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  imports = [ ./graphical.nix ];
+  imports = [ ./lib/graphical.nix ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;

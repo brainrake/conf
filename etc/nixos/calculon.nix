@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  imports = [ ../logical/desktop.nix ];
+  imports = [ ./lib/desktop.nix ];
 
   boot.loader.grub = {
     enable = true;
