@@ -25,7 +25,6 @@
 
   networking.networkmanager.enable = true;
 
-  programs.dconf.enable = true;
   programs.slock.enable = true;
   programs.light.enable = true;
 
@@ -48,13 +47,6 @@
       builders-use-substitutes = true
     '';
   };
-
-  environment.etc."dconf/db/local.d/disable-auto-suspend".text = ''
-    [org/gnome/settings-daemon/plugins/power]
-    power-button-action='nothing'
-    sleep-inactive-battery-type='nothing'
-    sleep-inactive-ac-type='nothing'
-  '';
 
   environment.systemPackages = with pkgs; [
     i3 i3status dmenu networkmanager_dmenu pasystray volumeicon
