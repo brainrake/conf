@@ -1,5 +1,0 @@
-'.editor':
-  'ctrl-backspace': 'editor:delete-to-previous-word-boundary'
-  'ctrl-delete': 'editor:delete-to-next-word-boundary'
-'body':
-  'alt-p': 'command-palette:toggle'
