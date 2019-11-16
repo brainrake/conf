@@ -23,7 +23,8 @@
         mpv evince geeqie feh pcmanfm
         chromium
         xorg.xbacklight xorg.xev xorg.xkbcomp xorg.xmodmap hsetroot glxinfo xorg.xev compton
-        rxvt_unicode scrot arandr autorandr lxappearance gcolor2 paprefs pavucontrol
+        alacritty scrot autorandr
+        arandr lxappearance gcolor2 paprefs pavucontrol
         transmission_gtk kdeconnect
         vanilla-dmz
         # pidgin pidginotr pidginlatex purple-hangouts purple-plugin-pack toxprpl
