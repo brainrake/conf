@@ -1,0 +1,34 @@
+include ~/.i3/config
+
+input "1739:30382:DLL0704:01_06CB:76AE_Touchpad" {
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+    pointer_accel 0.6
+    accel_profile adaptive
+    tap_button_map lmr
+}
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+    repeat_delay 200
+    repeat_rate 30
+    # xkb_layout layout
+}
+
+exec swayidle -w \
+  # timeout 600 'swaylock -f -u -c 333333' \
+  lock 'swaylock -f -c 333333 -u' \
+  before-sleep 'swaylock -f -u -c 333333' \
+
+exec rm -rf $SWAYSOCK.wob && mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute && amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute && amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > $SWAYSOCK.wob
+bindsym XF86AudioMute exec (amixer get Master | grep off > /dev/null && amixer -q set Master unmute && amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print substr($2, 0, length($2)-1) }' > $SWAYSOCK.wob) || (amixer -q set Master mute && echo 0 > $SWAYSOCK.wob)
+
+bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+
+bindsym XF86Sleep exec systemctl suspend
+
+bindsym $mod+Shift+s exec 'grim -g "$(slurp)" ~/screenshot-$(date +%F-%T).png'
