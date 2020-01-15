@@ -8,10 +8,7 @@
 
   networking.hostName = "eki";
 
-  i18n.consoleFont = "ter-i32n";
-  i18n.consolePackages = [ pkgs.terminus_font ];
-
-  boot.initrd.luks.devices = [ { device = "/dev/nvme0n1p6"; name = "ct"; } ];
+  boot.initrd.luks.devices = { ct = { device = "/dev/nvme0n1p6"; }; };
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.loader.systemd-boot.enable = true;
@@ -35,5 +32,6 @@
     memoryPercent = 25;
   };
 
-  virtualisation.lxc.enable = true;
+  services.xserver.enable = lib.mkForce false;
+
 }

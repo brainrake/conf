@@ -20,9 +20,10 @@
     my_desktop = pkgs.buildEnv {
       name = "my_desktop";
       paths = [ my_tools ] ++ (with pkgs; [
+        firefox
         mpv evince geeqie feh pcmanfm
-        chromium
         xorg.xbacklight xorg.xev xorg.xkbcomp xorg.xmodmap hsetroot glxinfo xorg.xev compton
+        light wob wev kanshi
         alacritty scrot autorandr
         arandr lxappearance gcolor2 paprefs pavucontrol
         transmission_gtk kdeconnect

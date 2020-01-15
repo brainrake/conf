@@ -5,7 +5,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  boot.earlyVconsoleSetup = true;
   boot.supportedFilesystems = [ "ext" "exfat" "vfat" "ntfs" "xfs" ];
 
   networking.firewall.enable = false;
@@ -13,6 +12,12 @@
   security.rtkit.enable = true;
 
   powerManagement.enable = true;
+
+  console = {
+    earlySetup = true;
+    font = "ter-i32n";
+    packages = [ pkgs.terminus_font ];
+  };
 
   services.avahi = {
     enable = true;
