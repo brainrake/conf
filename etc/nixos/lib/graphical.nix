@@ -6,15 +6,16 @@
   hardware = {
     opengl = rec {
       driSupport32Bit = true;
-      extraPackages = with pkgs; [ vaapiIntel ]; # libvdpau-va-gl vaapiVdpau ] ;
+      extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl vaapiVdpau intel-ocl ] ;
       extraPackages32 = extraPackages;
     };
     bluetooth = {
       enable = true;
-      extraConfig = ''
-        [General]
-        Enable=Source,Sink,Media,Socket
-      '';
+      config = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
+      };
     };
     pulseaudio = {
       enable = true;
@@ -36,7 +37,7 @@
       {
         hostName = "eket.su";
         sshUser = "nix";
-        sshKey = "TODO";
+        sshKey = "...";
         maxJobs = 4;
         speedFactor = 2;
         system = "x86_64-linux";
@@ -54,33 +55,62 @@
     mpv evince transmission_gtk firefox pcmanfm
   ];
 
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    enableCtrlAltBackspace = true;
+  # services.xserver = {
+  #   enable = true;
+  #   layout = "us";
+  #   enableCtrlAltBackspace = true;
 
-    windowManager.i3.enable = true;
+  #   windowManager.i3.enable = true;
 
-    synaptics = {
-      enable = true;
-      twoFingerScroll = true;
-      vertEdgeScroll = false;
-      palmDetect = true;
-      accelFactor = "0.1";
-      additionalOptions = ''
-        Option "VertScrollDelta" "-27"
-        Option "HorizScrollDelta" "-27"
-        Option "SingleTapTimeout" "30"
-        Option "MaxTapTime" "100"
-        Option "SingleTapTimeout" "100"
-      '';
-    };
-  };
+  #   libinput = {
+  #     enable = true;
+  #     naturalScrolling = true;
+  #     clickMethod = "clickfinger";
+  #     accelSpeed = "0.1";
+  #     additionalOptions = ''
+  #       Option "SingleTapTimeout" "30"
+  #       Option "MaxTapTime" "100"
+  #    '';
+  #   };
+
+  #   # synaptics = {
+  #   #   enable = true;
+  #   #   twoFingerScroll = true;
+  #   #   vertEdgeScroll = false;
+  #   #   palmDetect = true;
+  #   #   accelFactor = "0.1";
+  #   #   additionalOptions = ''
+  #   #     Option "VertScrollDelta" "-27"
+  #   #     Option "HorizScrollDelta" "-27"
+  #   #     Option "SingleTapTimeout" "30"
+  #   #     Option "MaxTapTime" "100"
+  #   #     Option "SingleTapTimeout" "100"
+  #   #   '';
+  #   # };
+  # };
 
   fonts = {
     enableFontDir = true;
     enableDefaultFonts = true;
-    fonts = with pkgs; [ corefonts terminus_font terminus_font_ttf ubuntu_font_family carlito hasklig mononoki fira fira-code fira-code-symbols fira-mono source-sans-pro source-serif-pro source-code-pro noto-fonts noto-fonts-cjk noto-fonts-emoji ];
+    fonts = with pkgs; [
+      carlito
+      corefonts
+      fira
+      fira-code
+      fira-code-symbols
+      fira-mono
+      hasklig
+      mononoki
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      terminus_font
+      terminus_font_ttf
+      ubuntu_font_family
+    ];
   };
 }
 

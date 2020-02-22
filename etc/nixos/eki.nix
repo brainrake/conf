@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./lib/workstation.nix ];
+  imports = [ ./lib/workstation.nix ]; # ./lib/musnix.nix ];
 
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
@@ -23,14 +23,22 @@
     fsType = "ntfs-3g";
   };
 
-  services.xserver.videoDrivers = [ "intel" ];
-
-  powerManagement.cpuFreqGovernor = "powersave";
-
   zramSwap = {
     enable = true;
     memoryPercent = 25;
   };
+
+  powerManagement.cpuFreqGovernor = "powersave";
+
+  qt5 = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita";
+  };
+
+  programs.qt5ct.enable = true;
+
+  services.xserver.videoDrivers = [ "intel" ];
 
   services.xserver.enable = lib.mkForce false;
 

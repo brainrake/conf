@@ -48,7 +48,7 @@
 
   environment.systemPackages = with pkgs; [
     tmux git direnv file toilet gparted rfkill powertop
-    iputils iw wirelesstools bind nmap mtr
+    iputils iw wirelesstools bind nmap mtr pinentry-curses
   ];
 
   programs.zsh.enable = true;
@@ -56,5 +56,5 @@
   programs.tmux.enable = true;
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.09";
 }
