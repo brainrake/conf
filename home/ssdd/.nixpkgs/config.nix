@@ -17,7 +17,7 @@
       name = "my_dev";
       paths = [ my_desktop ] ++ (with pkgs; [
         gnome3.seahorse
-        firefox
+        chromium
         git gcc racket direnv meld file graphviz imagemagick
         mixxx
         gimp
