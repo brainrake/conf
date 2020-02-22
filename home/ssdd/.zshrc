@@ -34,9 +34,6 @@ bindkey "\eOd" emacs-backward-word
 bindkey "\e\e[C" forward-word
 bindkey "\e\e[D" backward-word
 bindkey "^H" backward-delete-word
-# for rxvt
-#bindkey "\e[8~" end-of-line
-#bindkey "\e[7~" beginning-of-line
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
@@ -65,7 +62,7 @@ alias comp='compton --backend=glx --vsync=opengl-swc'
 
 alias y='noglob youtube-dl --extract-audio --audio-format flac '
 
-eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh 2> /dev/null)
 export SSH_AUTH_SOCK
 
 [[ -x `command -v dircolors` ]] && [[ -e .dircolors ]] && eval `dircolors .dircolors`
@@ -73,3 +70,5 @@ export SSH_AUTH_SOCK
 export MC_SKIN=$HOME/.config/mc/solarized.ini
 
 eval "$(direnv hook zsh)"
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec sway

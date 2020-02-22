@@ -211,7 +211,7 @@ bar {
   mode hide
   modifier Mod1
   status_command i3status
-  font pango:Terminus 24
+  font "pango:Terminus (TTF) 24"
   #tray_output primary
   #output eDP1
   colors {
@@ -230,7 +230,7 @@ bar {
   mode hide
   modifier Mod1
   status_command i3status
-  font pango:Terminus 9
+  font "pango:Terminus (TTF) 10"
   tray_output none
   output VGA1
   output HDMI1

@@ -1,6 +1,13 @@
 {
   allowUnfree = true;
 
+  firefox = {
+    enableGnomeExtensions = false;
+    enableAdobeFlash = true;
+    enableGoogleTalkPlugin = true;
+    enableBrowserpass = true;
+  };
+
   packageOverrides = pkgs: rec {
     my_ = pkgs.buildEnv {
       name = "my_";
@@ -22,22 +29,21 @@
       paths = [ my_tools ] ++ (with pkgs; [
         firefox
         mpv evince geeqie feh pcmanfm
-        xorg.xbacklight xorg.xev xorg.xkbcomp xorg.xmodmap hsetroot glxinfo xorg.xev compton
-        light wob wev kanshi
-        alacritty scrot autorandr
-        arandr lxappearance gcolor2 paprefs pavucontrol
+        xorg.xkbcomp xorg.xmodmap glxinfo xdg_utils
+        light wob wev kanshi slurp grim swaylock
+        alacritty st
+        lxappearance gcolor2 paprefs pavucontrol
         transmission_gtk kdeconnect
         vanilla-dmz
-        # pidgin pidginotr pidginlatex purple-hangouts purple-plugin-pack toxprpl
       ]);
     };
     my_tools = pkgs.buildEnv {
       name = "my_tools";
       paths = with pkgs; [
         mosh iputils bind nmap tcpdump mtr wget iw wirelesstools gnupg mkpasswd
-        htop psmisc nox bc
+        htop bc mc-solarized
         pciutils lm_sensors
-        bat tree unzip mc mc-solarized
+        sl bat fzf tree unzip psmisc nox dtach xxd
       ];
     };
     mc-solarized = pkgs.writeTextFile {
@@ -48,5 +54,9 @@
         sha256 = "13p2flyn0i1c88xkycy2rk24d51can8ff31gh3c6djni3p981waq";
       };
     };
+    my_emacs = pkgs.emacsWithPackages (epkgs: (with epkgs.melpaStablePackages; [
+      magit
+      multiple-cursors
+    ]));
   };
 }
